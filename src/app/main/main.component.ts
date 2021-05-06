@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ServService } from '../service/serv.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { mainModule } from 'process';
 
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
+  styleUrls: ['./main.component.css','./bootstrap-grid.css'],
   animations: [
     trigger('fade', [
       state('small', style({

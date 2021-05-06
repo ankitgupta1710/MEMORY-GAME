@@ -1,26 +1,47 @@
 .content{
+    box-sizing: border-box;
 width: 100%;
 height: 100%;
+overflow:hidden;
 
 }
+
+#startbtn{
+    background-color:#49c03e; ;
+    border-radius: 10%;
+    font-family: 'Press Start 2P',cursive;
+    font-size: 1.9rem;
+    padding: 2px 8px;
+    color: white;
+    vertical-align: bottom ;
+}
+div.hh{
+    height: 20%;
+}
 h1{
+    height: 20%;
     text-align: center;
-    margin-top: 50px;
-    color:#fef2bf;
+    margin: 50px;
+    color:#fff;
     font-family: 'Press Start 2P',cursive;
     font-size: 3rem;
     margin-bottom: 40px;
+    align-items: center;
+    box-sizing: border-box;
 }
 #circle {
-    width: 500px;
-    height: 500px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 40%;
+    height: 40%;
     /* border-radius: 50%; */
     float: none;
-    margin: 70px    auto;
+    margin: 0;
     position: absolute;   
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 .button {
@@ -36,6 +57,7 @@ h1{
     cursor: pointer;
   }
 #start{
+    position: absolute;
     border-radius: 50%;
     background-color: #fef2bf;
     color: #011f3f;
@@ -53,14 +75,28 @@ h1{
     font-weight: bold;
     border-color: black
 
+
 }
 .color{
     position: relative;
-    width :48%;
-    height : 48%;
+    width :100px !important;
+    height : 100px;
+    padding: 0;
     border-style: solid;
     border-width:5%;
+    margin: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex: none !important;
  
+}
+.clrrow{
+    
+    box-sizing: border-box;
+    margin: 0;
+    overflow:visible;
+    
+
 }
 .green{
     border-radius : 20%;
@@ -101,12 +137,47 @@ h1{
 .blue{
     border-radius : 20%;
     background-color: blue;
-    top:-40px;
+  
     border: solid 10px black; 
 }
 .white{
     border-radius : 20%;
     background-color: white;
+    border: solid 10px black; 
+}
+.black{
+    border-radius : 20%;
+    background-color: black;
+    border: solid 10px black; 
+}
+.brown{
+    border-radius : 20%;
+    background-color: brown;
+    border: solid 10px black; 
+}
+.silver{
+    border-radius : 20%;
+    background-color: silver;
+    border: solid 10px black; 
+}
+.purple{
+    border-radius : 20%;
+    background-color: purple;
+    border: solid 10px black; 
+}
+.gray{
+    border-radius : 20%;
+    background-color: gray;
+    border: solid 10px black; 
+}
+.indigo{
+    border-radius : 20%;
+    background-color: indigo;
+    border: solid 10px black; 
+}
+.violet{
+    border-radius : 20%;
+    background-color: violet;
     border: solid 10px black; 
 }
 .color:hover{
@@ -125,71 +196,3 @@ p{
     margin-top: 400px;
 }
 
-@media only screen and (max-width: 1100px) {
- 
-    #start{
-        border-radius: 50%;
-        background-color: darkslateblue;
-        color: white;
-        width:50PX;
-        height: 50PX;
-        border-style: solid;  
-        position: absolute;
-        
-        z-index: 1000;
-    
-    }
-
-  }
-
-@media only screen and (max-width: 800px) {
-    #circle { 
-        height: 40%;
-         width: 50%;
-    }
-
-    #start{
-        border-radius: 50%;
-        background-color: darkslateblue;
-        color: white;
-        width:50PX;
-        height: 50PX;
-        border-style: solid;  
-        position: absolute;
-  
-        z-index: 1000;
-    
-    }
-
-  }
-
-
-
-
-  @media only screen and (max-width: 500px) {
-    #circle { 
-        height: 35%;
-         width: 60%;
-         border-width: 10px;; 
-    }
-
-
-    #start{
-        width:40PX;
-    height: 40PX;
-    text-align: center;
-    font-size: 10px;
-    }
-  }
-
-  @media only screen and (max-width: 360px) {
-
-    #circle { 
-        height: 35%;
-         width: 80%;
-         /* top:43%;
-        left: 43%; */
-    }
-
-  }
-  

@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ServService {
   tiles: number = 1;
-  colorBlockAll: Array<Object> = [{ color: "white", animate: "large", audio: new Audio() }, { color: "violet", animate: "large", audio: new Audio() }, { color: "pink", animate: "large", audio: new Audio() }, { color: "red", animate: "large", audio: new Audio() }, { color: "orange", animate: "large", audio: new Audio() }, { color: "green", animate: "large", audio: new Audio() }, { color: "yellow", animate: "large", audio: new Audio() }, { color: "blue", animate: "large", audio: new Audio() }]
-  colorBlock: Array<Object> = []
+  colorBlockAll: Array<Object> = [{ color: "white", animate: "large", audio: new Audio() }, { color: "violet", animate: "large", audio: new Audio() }, { color: "pink", animate: "large", audio: new Audio() }, { color: "red", animate: "large", audio: new Audio() }, { color: "blue", animate: "large", audio: new Audio() }, { color: "black", animate: "large", audio: new Audio() }, { color: "brown", animate: "large", audio: new Audio() }, { color: "silver", animate: "large", audio: new Audio() }, { color: "orange", animate: "large", audio: new Audio() }, { color: "green", animate: "large", audio: new Audio() }, { color: "yellow", animate: "large", audio: new Audio() }, { color: "purple", animate: "large", audio: new Audio() }, { color: "gray", animate: "large", audio: new Audio() }, { color: "indigo", animate: "large", audio: new Audio() }, { color: "violet", animate: "large", audio: new Audio() }];
+  colorBlock: Array<Object> = [];
   colorSeries: Array<number> = [];
   level: number = 1;
   index: number = 0;
@@ -20,22 +20,26 @@ export class ServService {
   buttonClick: any = new Audio();
   timeWait: number = 1500;
   showLose: boolean = false;
-  color: Array<string> = ['Pink','Violet','White','RED', 'Orange', 'Green','Yellow','Blue'];
+  color: Array<string> = ['Pink','Violet','White','Red', 'Orange', 'Green','Yellow','Blue','Black','Brown', 'Silver', 'Purple', 'Gray', 'Indigo', 'Violet'];
   lastcolor: string;
   uturn : boolean = false;
 
   constructor() {
-    this.loadSounds();
+    this.initgame();
   }
-  loadSounds(): void {
-    this.tiles = +(window.prompt("Enter number of tiles:  "));
-    this.colorBlock = this.colorBlockAll.slice(1, this.tiles + 1);
+  initgame(): void {
+    this.tiles = +(window.prompt("Enter number of tiles (2-15):  "));
+    if(!(this.tiles > 2 && this.tiles<16) ){
+      window.alert('Invalid Input Please Try Again!!');
+      this.initgame();
+    }
+    this.colorBlock = this.colorBlockAll.slice(0, this.tiles );
     for (const key in this.colorBlock) {
       this.colorBlock[key]['audio'].src = `./../assets/Audio/${key}.wav`;
       this.colorBlock[key]['audio'].load();
     }
     this.failSound.src = `./../assets/Audio/fail.mp3`;
-    this.failSound.load()
+    this.failSound.load();
     this.buttonClick.src = `./../assets/Audio/button.mp3`;
     this.buttonClick.load();
   }

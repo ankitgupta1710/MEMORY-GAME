@@ -3,23 +3,27 @@
 
 
 
-<div class="content" >
-  
-  <h1 *ngIf="ServService.hideStartButton&&!ServService.showLose">Click Start Button To Play</h1>
-  <h1 *ngIf="ServService.uturn">Your Turn</h1>
-  <img class="loser" *ngIf="ServService.showLose" src='./../assets/img/loser.gif'>
-  
-  <div *ngIf="!ServService.showLose" id="circle">
+<div class="content">
+  <div class="hh" >
+  <h1 *ngIf="ServService.hideStartButton&&!ServService.showLose">Click  <button type="button" id ='startbtn'  (click)="ServService.runGame()" (click)="ServService.buttonClick.play()"
+    class="btn btn4 round4" *ngIf="ServService.hideStartButton">Start</button> To Play</h1>
     
-    <button type="button" id="start" (click)="ServService.runGame()" (click)="ServService.buttonClick.play()"
-      class="btn btn4 round4" *ngIf="ServService.hideStartButton">Start</button>
-    <button type="button" id="start" (click)="ServService.reset()" (click)="ServService.buttonClick.play()"
-      class="btn btn4 round4" *ngIf="!ServService.hideStartButton&&ServService.playingAuth">Reset</button>  
-    <div [@fade]='this.colorBlock[i].animate' *ngFor="let color of colorBlock; let i = index"
-      class="color {{color.color}}"
-      (click)="ServService.clickMulti&&ServService.playingAuth&&ServService.addPlayerChoise(i)">
-      
-    </div>
+  <h1 *ngIf="ServService.uturn">Your Turn  <button type="button" id ='startbtn'  (click)="ServService.reset()" (click)="ServService.buttonClick.play()"
+    class="btn btn4 round4" *ngIf="!ServService.hideStartButton&&ServService.playingAuth">Reset</button></h1>
  
+
+  <img class="loser" *ngIf="ServService.showLose" src='./../assets/img/loser.gif'>
+</div>
+  <div *ngIf="!ServService.showLose" id="circle" class="container">
+
+    <div class="row clrrow">
+   
+      <div [@fade]='this.colorBlock[i].animate' *ngFor="let color of colorBlock; let i = index"
+        class="col-md-2 color {{color.color}}"
+        (click)="ServService.clickMulti&&ServService.playingAuth&&ServService.addPlayerChoise(i)">
+    
+      </div>
+    </div>
+    
   </div>
 </div>
