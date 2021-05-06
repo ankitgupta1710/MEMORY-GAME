@@ -1,0 +1,9 @@
+<header>
+    <div *ngIf="!ServService.hideStartButton&&!ServService.showLose" class="header-cont">
+        <p>LEVEL : {{ServService.colorSeries.length}}</p>
+    </div>
+    <div *ngIf="ServService.showLose" class="header-cont">
+        <p>Game Over</p>
+    </div>
+
+</header>
